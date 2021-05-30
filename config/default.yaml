@@ -1,0 +1,9 @@
+server:
+  port: 3000
+
+db:
+  type: 'mongodb'
+  database: 'taskmanagement'
+
+jwt:
+  expiresIn: 3000

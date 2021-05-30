@@ -2,7 +2,7 @@
 import { ArgumentMetadata } from '@nestjs/common';
 import { BadRequestException } from '@nestjs/common';
 import { PipeTransform } from '@nestjs/common';
-import { TaskStatus } from '../task.model';
+import { TaskStatus } from '../types/task-status.enum';
 
 export class TaskStatusValidationPipe implements PipeTransform {
   readonly allowedStatuses = [
@@ -10,9 +10,7 @@ export class TaskStatusValidationPipe implements PipeTransform {
     TaskStatus.DONE,
     TaskStatus.IN_PROGRESS,
   ];
-  transform(value: any, metadata: ArgumentMetadata) {
-    value = value.toLowerCase();
-    
+  transform(value: any, metadata: ArgumentMetadata) {    
     if (!this.isStatusValid(value)) {
       throw new BadRequestException(`"${value}" is an invalid status`);
     }
