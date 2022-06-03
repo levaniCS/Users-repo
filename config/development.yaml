@@ -1,7 +1,0 @@
-db:
-  host: 'localhost'
-  username: 'task-test'
-  password: 'task-test'
-
-jwt:
-  secret: 'topSecret51'

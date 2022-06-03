@@ -1,8 +1,8 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateTaskDto {
+export class CreateUserDto {
   @IsNotEmpty()
-  title: string;
+  type: string;
   @IsNotEmpty()
-  description: string;
+  site_admin: boolean;
 }
